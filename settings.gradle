@@ -1,0 +1,3 @@
+include ':est'
+include ':app'
+rootProject.name = "Easy Spannable Text"
