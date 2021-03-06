@@ -75,6 +75,8 @@ textView.setText(sequence); //or textView.setText(sequence, TextView.BufferType.
 - `Typeface.ITALIC`
 - `Typeface.BOLD_ITALIC`
 
+Preview :
+
 <p align="center">
   <img src="https://github.com/gzeinnumer/EasySpannableText/blob/master/preview/example1.jpg" width="300"/>
 </p>
@@ -103,9 +105,10 @@ CharSequence sequence = new SpannableBuilder()
 textView.setText(sequence); //or textView.setText(sequence, TextView.BufferType.SPANNABLE);
 textView.setMovementMethod(LinkMovementMethod.getInstance());
 ```
+Preview :
+
 <p align="center">
     <div>
-        <img src="https://github.com/gzeinnumer/EasySpannableText/blob/master/preview/example2.jpg" width="300"/>
         <img src="https://github.com/gzeinnumer/EasySpannableText/blob/master/preview/example3.gif" width="300"/>
     </div>
 </p>
@@ -113,7 +116,8 @@ textView.setMovementMethod(LinkMovementMethod.getInstance());
 ---
 # Example Code/App
 
-[]()
+[Without OnClick](https://github.com/gzeinnumer/EasySpannableText/blob/da5acff76666eba2fb514edbae570e59f7be6d2d/app/src/main/java/com/gzeinnumer/easyspannabletext/MainActivity.java#L27)
+ [With OnClick](https://github.com/gzeinnumer/EasySpannableText/blob/da5acff76666eba2fb514edbae570e59f7be6d2d/app/src/main/java/com/gzeinnumer/easyspannabletext/MainActivity.java#L43)
 
 ---
 # Version
