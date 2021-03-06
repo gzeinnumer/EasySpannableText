@@ -76,7 +76,7 @@ textView.setText(sequence); //or textView.setText(sequence, TextView.BufferType.
 - `Typeface.BOLD_ITALIC`
 
 <p align="center">
-  <img src="https://github.com/gzeinnumer/MyLibUtils/blob/master/preview/bg.jpg" width="300"/>
+  <img src="https://github.com/gzeinnumer/EasySpannableText/blob/master/preview/example1.jpg" width="300"/>
 </p>
 
 #
@@ -103,11 +103,9 @@ CharSequence sequence = new SpannableBuilder()
 textView.setText(sequence); //or textView.setText(sequence, TextView.BufferType.SPANNABLE);
 textView.setMovementMethod(LinkMovementMethod.getInstance());
 ```
-`Typeface` optional value
-- `Typeface.NORMAL`
-- `Typeface.BOLD`
-- `Typeface.ITALIC`
-- `Typeface.BOLD_ITALIC`
+<p align="center">
+  <img src="https://github.com/gzeinnumer/EasySpannableText/blob/master/preview/example2.jpg" width="300"/>
+</p>
 
 ---
 # Example Code/App
