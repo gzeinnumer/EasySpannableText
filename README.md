@@ -104,7 +104,10 @@ textView.setText(sequence); //or textView.setText(sequence, TextView.BufferType.
 textView.setMovementMethod(LinkMovementMethod.getInstance());
 ```
 <p align="center">
-  <img src="https://github.com/gzeinnumer/EasySpannableText/blob/master/preview/example2.jpg" width="300"/>
+    <div>
+        <img src="https://github.com/gzeinnumer/EasySpannableText/blob/master/preview/example2.jpg" width="300"/>
+        <img src="https://github.com/gzeinnumer/EasySpannableText/blob/master/preview/example3.gif" width="300"/>
+    </div>
 </p>
 
 ---
