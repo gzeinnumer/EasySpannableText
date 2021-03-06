@@ -20,21 +20,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        noOnClick();
-        withOnClick();
+        noOnClick();
+//        withOnClick();
     }
 
     private void noOnClick() {
         TextView textView = findViewById(R.id.tv);
 
-        int size = 2;
+        int sizeInDp = 21;
         int color = ContextCompat.getColor(this, R.color.purple_500);
 
-        CharSequence sequence = new SpannableBuilder()
+        CharSequence sequence = new SpannableBuilder(getApplicationContext())
                 .text(Typeface.NORMAL, "text\n")
                 .textColor(Typeface.BOLD, "textColor\n", color)
-                .textSize(Typeface.ITALIC, "textSize\n", size)
-                .textSizeColor(Typeface.BOLD_ITALIC, "textSizeColor\n", size, color)
+                .textSize(Typeface.ITALIC, "textSize\n", sizeInDp)
+                .textSizeColor(Typeface.BOLD_ITALIC, "textSizeColor\n", sizeInDp, color)
                 .build();
         textView.setText(sequence);
 //        textView.setText(sequence, TextView.BufferType.SPANNABLE);
@@ -43,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
     private void withOnClick() {
         TextView textView = findViewById(R.id.tv);
 
-        int size = 2;
+        int sizeInDp = 21;
         int color = ContextCompat.getColor(this, R.color.purple_500);
 
-        CharSequence sequence = new SpannableBuilder()
+        CharSequence sequence = new SpannableBuilder(getApplicationContext())
                 .text(Typeface.NORMAL, "text\n", new SpannableCallBack() {
                     @Override
                     public void onClick() {
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         toast.show();
                     }
                 })
-                .textSize(Typeface.ITALIC, "textSize\n", size, new SpannableCallBack() {
+                .textSize(Typeface.ITALIC, "textSize\n", sizeInDp, new SpannableCallBack() {
                     @Override
                     public void onClick() {
                         Toast toast = Toast.makeText(MainActivity.this, "Tekan 3", Toast.LENGTH_SHORT);
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                         toast.show();
                     }
                 })
-                .textSizeColor(Typeface.BOLD_ITALIC, "textSizeColor\n", size, color, new SpannableCallBack() {
+                .textSizeColor(Typeface.BOLD_ITALIC, "textSizeColor\n", sizeInDp, color, new SpannableCallBack() {
                     @Override
                     public void onClick() {
                         Toast toast = Toast.makeText(MainActivity.this, "Tekan 4", Toast.LENGTH_SHORT);

@@ -1,22 +1,27 @@
 package com.gzeinnumer.est;
 
+import android.content.Context;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
+import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
-import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
+import android.util.TypedValue;
 
 import java.util.ArrayList;
 
 public class SpannableBuilder {
 
-    SpannableCallBack spannableCallBack;
-    ArrayList<SpannableModel> data = new ArrayList<SpannableModel>();
-    public SpannableBuilder() {
+    private final ArrayList<SpannableModel> data = new ArrayList<SpannableModel>();
+    private final Context context;
+    private SpannableCallBack spannableCallBack;
+
+    public SpannableBuilder(Context context) {
+        this.context = context;
     }
 
     public SpannableBuilder text(int type, String str) {
-        addString(str, type,-1, -1, spannableCallBack);
+        addString(str, type, -1, -1, spannableCallBack);
         return this;
     }
 
@@ -59,22 +64,29 @@ public class SpannableBuilder {
         SpannableModel spannableModel = new SpannableModel();
         spannableModel.setString(str);
         spannableModel.setTypeStyle(typeStyle);
-        spannableModel.setSize(size);
+        spannableModel.setSize(getValueInDP(context, size));
         spannableModel.setColor(color);
         spannableModel.setSpannableCallBack(spannableCallBack);
         data.add(spannableModel);
     }
 
+    private int getValueInDP(Context context, int value) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, context.getResources().getDisplayMetrics());
+    }
+
     private CharSequence getFinalValue() {
         SpannableStringBuilder longDescription = new SpannableStringBuilder();
-        for(int i=0; i<data.size(); i++){
+        for (int i = 0; i < data.size(); i++) {
             SpannableModel d = data.get(i);
             int start = longDescription.length();
             longDescription.append(d.string);
             longDescription.setSpan(new StyleSpan(d.typeStyle), start, longDescription.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            if (d.color != -1) longDescription.setSpan(new ForegroundColorSpan(d.color), start, longDescription.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            if (d.size != -1) longDescription.setSpan(new RelativeSizeSpan(d.size), start,longDescription.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            if (d.spannableCallBack !=null) longDescription.setSpan(new SpannableClickableSpan(i+1,d.spannableCallBack), start, longDescription.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            if (d.color != -1)
+                longDescription.setSpan(new ForegroundColorSpan(d.color), start, longDescription.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            if (d.size != -1)
+                longDescription.setSpan(new AbsoluteSizeSpan(d.size), start, longDescription.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            if (d.spannableCallBack != null)
+                longDescription.setSpan(new SpannableClickableSpan(i + 1, d.spannableCallBack), start, longDescription.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
         return longDescription;
     }

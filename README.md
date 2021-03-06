@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-    <a><img src="https://img.shields.io/badge/Version-1.0.0-brightgreen.svg?style=flat"></a>
+    <a><img src="https://img.shields.io/badge/Version-1.0.1-brightgreen.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/ID-gzeinnumer-blue.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/Java-Suport-green?logo=java&style=flat"></a>
     <a><img src="https://img.shields.io/badge/kotlin-Suport-green?logo=kotlin&style=flat"></a>
@@ -54,14 +54,14 @@ dependencies {
 
 ### **Customize Text Style in TextView**
 ```java
-int size = 2;
+int sizeInDp = 21;
 int color = ContextCompat.getColor(this, R.color.purple_500);
 
-CharSequence sequence = new SpannableBuilder()
+CharSequence sequence = new SpannableBuilder(getApplicationContext())
        .text(Typeface.NORMAL,"text\n")
        .textColor(Typeface.BOLD,"textColor\n", color)
-       .textSize(Typeface.ITALIC,"textSize\n", size)
-       .textSizeColor(Typeface.BOLD_ITALIC,"textSizeColor\n", size, color)
+       .textSize(Typeface.ITALIC,"textSize\n", sizeInDp)
+       .textSizeColor(Typeface.BOLD_ITALIC,"textSizeColor\n", sizeInDp, color)
        .build();
 textView.setText(sequence); //or textView.setText(sequence, TextView.BufferType.SPANNABLE);
 ```
@@ -82,10 +82,10 @@ Preview :
 
 add 1 parameter in function `.text()`,`.textColor()`,`.textSize()`,`.textSizeColor()`. and add `setMovementMethod()` after `setText()`. Example.
 ```java
-int size = 2;
+int sizeInDp = 21;
 int color = ContextCompat.getColor(this, R.color.purple_500);
 
-CharSequence sequence = new SpannableBuilder()
+CharSequence sequence = new SpannableBuilder(getApplicationContext())
         .text(Typeface.NORMAL, "text\n", new SpannableCallBack() {
             @Override
             public void onClick() {
@@ -95,8 +95,8 @@ CharSequence sequence = new SpannableBuilder()
             }
         })
         .textColor(Typeface.BOLD, "textColor\n", color, new SpannableCallBack() { ... })
-        .textSize(Typeface.ITALIC, "textSize\n", size, new SpannableCallBack() { ... })
-        .textSizeColor(Typeface.BOLD_ITALIC, "textSizeColor\n", size, color, new SpannableCallBack() { ... })
+        .textSize(Typeface.ITALIC, "textSize\n", sizeInDp, new SpannableCallBack() { ... })
+        .textSizeColor(Typeface.BOLD_ITALIC, "textSizeColor\n", sizeInDp, color, new SpannableCallBack() { ... })
         .build();
 textView.setText(sequence); //or textView.setText(sequence, TextView.BufferType.SPANNABLE);
 textView.setMovementMethod(LinkMovementMethod.getInstance());
@@ -117,6 +117,8 @@ Preview :
 # Version
 - **1.0.0**
   - First Release
+- **1.0.1**
+  - Value in DP
 
 ---
 # Contribution
