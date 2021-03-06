@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://github.com/gzeinnumer/MyLibUtils/blob/master/preview/bg.jpg"/>
-</p>
-
 <h1 align="center">
     EasySpannableText
 </h1>
@@ -46,12 +42,12 @@ dependencies {
 
 ---
 # Feature List
-- [x] [Customize Text Style in TextView]()
-- [x] [Text Style With CallBack]()
+- [x] [Customize Text Style in TextView](#customize-text-style-in-textview)
+- [x] [Text Style With CallBack](#text-style-with-callback)
 
 ---
 # Tech stack and 3rd library
-- []()
+- [SpannableStringBuilder](https://developer.android.com/reference/android/text/SpannableStringBuilder)
 
 ---
 # Usage
