@@ -1,14 +1,14 @@
 package com.gzeinnumer.easyspannabletext;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.Gravity;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.gzeinnumer.est.SpannableBuilder;
 import com.gzeinnumer.est.SpannableCallBack;
@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
         int color = ContextCompat.getColor(this, R.color.purple_500);
 
         CharSequence sequence = new SpannableBuilder()
-                .text(Typeface.NORMAL,"text\n")
-                .textColor(Typeface.BOLD,"textColor\n",color)
-                .textSize(Typeface.ITALIC,"textSize\n",size)
-                .textSizeColor(Typeface.BOLD_ITALIC,"textSizeColor\n",size, color)
+                .text(Typeface.NORMAL, "text\n")
+                .textColor(Typeface.BOLD, "textColor\n", color)
+                .textSize(Typeface.ITALIC, "textSize\n", size)
+                .textSizeColor(Typeface.BOLD_ITALIC, "textSizeColor\n", size, color)
                 .build();
         textView.setText(sequence);
 //        textView.setText(sequence, TextView.BufferType.SPANNABLE);
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         int color = ContextCompat.getColor(this, R.color.purple_500);
 
         CharSequence sequence = new SpannableBuilder()
-                .text(Typeface.NORMAL,"text\n", new SpannableCallBack() {
+                .text(Typeface.NORMAL, "text\n", new SpannableCallBack() {
                     @Override
                     public void onClick() {
                         Toast toast = Toast.makeText(MainActivity.this, "Tekan 1", Toast.LENGTH_SHORT);
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                         toast.show();
                     }
                 })
-                .textColor(Typeface.BOLD,"textColor\n",color, new SpannableCallBack() {
+                .textColor(Typeface.BOLD, "textColor\n", color, new SpannableCallBack() {
                     @Override
                     public void onClick() {
                         Toast toast = Toast.makeText(MainActivity.this, "Tekan 2", Toast.LENGTH_SHORT);
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         toast.show();
                     }
                 })
-                .textSize(Typeface.ITALIC,"textSize\n",size, new SpannableCallBack() {
+                .textSize(Typeface.ITALIC, "textSize\n", size, new SpannableCallBack() {
                     @Override
                     public void onClick() {
                         Toast toast = Toast.makeText(MainActivity.this, "Tekan 3", Toast.LENGTH_SHORT);
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                         toast.show();
                     }
                 })
-                .textSizeColor(Typeface.BOLD_ITALIC,"textSizeColor\n",size, color, new SpannableCallBack() {
+                .textSizeColor(Typeface.BOLD_ITALIC, "textSizeColor\n", size, color, new SpannableCallBack() {
                     @Override
                     public void onClick() {
                         Toast toast = Toast.makeText(MainActivity.this, "Tekan 4", Toast.LENGTH_SHORT);
