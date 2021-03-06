@@ -80,7 +80,7 @@ Preview :
 #
 ### **Text Style With CallBack**
 
-add 1 parameter in function `.text()`,`.textColor()`,`.textSize()`,`.textSizeColor()`. and add `setMovementMethod()` after `setText()` like this.
+add 1 parameter in function `.text()`,`.textColor()`,`.textSize()`,`.textSizeColor()`. and add `setMovementMethod()` after `setText()`. Example.
 ```java
 int size = 2;
 int color = ContextCompat.getColor(this, R.color.purple_500);
@@ -104,9 +104,7 @@ textView.setMovementMethod(LinkMovementMethod.getInstance());
 Preview :
 
 <p align="center">
-    <div>
-        <img src="https://github.com/gzeinnumer/EasySpannableText/blob/master/preview/example3.gif" width="300"/>
-    </div>
+    <img src="https://github.com/gzeinnumer/EasySpannableText/blob/master/preview/example3.gif" width="300"/>
 </p>
 
 ---
