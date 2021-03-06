@@ -113,7 +113,7 @@ Preview :
 # Example Code/App
 
 [Without OnClick](https://github.com/gzeinnumer/EasySpannableText/blob/da5acff76666eba2fb514edbae570e59f7be6d2d/app/src/main/java/com/gzeinnumer/easyspannabletext/MainActivity.java#L27)
- [With OnClick](https://github.com/gzeinnumer/EasySpannableText/blob/da5acff76666eba2fb514edbae570e59f7be6d2d/app/src/main/java/com/gzeinnumer/easyspannabletext/MainActivity.java#L43)
+& [With OnClick](https://github.com/gzeinnumer/EasySpannableText/blob/da5acff76666eba2fb514edbae570e59f7be6d2d/app/src/main/java/com/gzeinnumer/easyspannabletext/MainActivity.java#L43)
 
 ---
 # Version
